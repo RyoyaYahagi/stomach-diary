@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>夕食メニュー・便記録カレンダー</title>
+  <script>
+  var password = prompt("パスワードを入力してください:");
+  if (password !== 0915) {
+    document.body.innerHTML = "<h1>アクセス拒否</h1>";
+    throw new Error("Unauthorized access");
+  }
+</script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
