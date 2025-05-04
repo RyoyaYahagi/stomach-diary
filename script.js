@@ -244,7 +244,7 @@
     if (Object.keys(aggregate).length > 0) {
       const table = document.createElement("table");
       const headerRow = document.createElement("tr");
-      ["夕食メニュー", "下痢気味件数"].forEach(text => {
+      ["夕食メニュー", "件数"].forEach(text => {
         const th = document.createElement("th");
         th.textContent = text;
         headerRow.appendChild(th);
