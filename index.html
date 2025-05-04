@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>夕食メニュー・便記録カレンダー</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>食事と💩記録</h1>
+    <form id="recordForm">
+      <div>
+        <label for="date">日付:</label>
+        <input type="date" id="date" required>
+      </div>
+      <div>
+        <label for="time">時間:</label>
+        <input type="time" id="time" required>
+        <button type="button" id="currentTimeBtn">現在時刻</button>
+      </div>
+      <div>
+        <label for="menu">食べたもの:</label>
+        <input type="text" id="menu" required>
+      </div>
+      <div>
+        <label for="memo">メモ:</label>
+        <input type="text" id="memo">
+      </div>
+      <div>
+        <label for="bowel">💩の状態:</label>
+        <select id="bowel" required>
+          <option value="">選択してください</option>
+          <option value="正常">正常</option>
+          <option value="柔らかい">柔らかい</option>
+          <option value="硬い">硬い</option>
+          <option value="下痢気味">下痢気味</option>
+        </select>
+      </div>
+      <div>
+        <button type="submit">記録</button>
+      </div>
+    </form>
+    
+    <h2>カレンダー</h2>
+    <div id="calendar"></div>
+    
+    <h2>下痢しやすい食事</h2>
+    <div id="aggregate"></div>
+    
+    <h2>最近の記録（5件）</h2>
+    <div id="latestRecords"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
