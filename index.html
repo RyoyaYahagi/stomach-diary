@@ -4,25 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>夕食メニュー・便記録カレンダー</title>
-   <script>
-  const CORRECT_PASSWORD = "0915"; // 好きなパスワードに変更
-  const savedPassword = localStorage.getItem("site-password");
+  <script>
+    const CORRECT_PASSWORD = "0915"; // ここを好きな文字に変える
+    const savedPassword = localStorage.getItem("site-password");
 
-  function denyAccess() {
-    document.body.innerHTML = "<h1>アクセス拒否</h1>";
-    throw new Error("Unauthorized access");
-  }
-
-  if (savedPassword !== CORRECT_PASSWORD) {
-    const entered = prompt("パスワードを入力してください:");
-    if (entered === null || entered !== CORRECT_PASSWORD) {
-      denyAccess(); // キャンセル or 間違ったパスワード → 拒否
-    } else {
-      localStorage.setItem("site-password", entered); // 正解なら保存
+    if (savedPassword !== CORRECT_PASSWORD) {
+      const entered = prompt("パスワードを入力してください:");
+      if (entered === CORRECT_PASSWORD) {
+        localStorage.setItem("site-password", entered);
+      } else {
+        document.body.innerHTML = "<h1>アクセス拒否</h1>";
+        throw new Error("Unauthorized access");
+      }
     }
-  }
-</script>
-
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
